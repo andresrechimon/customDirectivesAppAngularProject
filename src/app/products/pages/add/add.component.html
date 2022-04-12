@@ -1,0 +1,53 @@
+<h1 class="mt-5">Agregar Producto</h1>
+<hr>
+
+<form class="form-group" [formGroup]="myForm">
+    <div class="row g-3 align-items-center mb-3">
+        <div class="col-auto">
+            <label class="col-form-label">Nombre:</label>
+        </div>
+
+        <div class="col-auto">
+            <input class="form-control" formControlName="name">
+        </div>
+
+        <div class="col-auto">
+            <!--If you take message and color bindings the values from the custom directives will set-->
+            <span 
+            error-msg
+            [message]="text1"
+            [color]="color"
+            [valid]="!hasError('name')"
+            >
+            </span>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <button 
+            class="btn btn-info"
+            (click)="changeName()"
+            >Número Random</button>
+            &nbsp;
+            <button 
+            class="btn btn-info"
+            (click)="changeColor()"
+            >Cambiar Color</button>
+        </div>
+    </div>
+</form>
+
+<h3 class="mt-5">Formulario</h3>
+<pre>Value: {{ myForm.value | json }}</pre>
+<pre>Valid: {{ myForm.valid }}</pre>
+
+<div 
+*customIf="myForm.valid"
+class="row mt-5">
+    <div class="col">
+        <div class="alert alert-primary">
+            TODO OK
+        </div>
+    </div>
+</div>
