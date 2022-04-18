@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   ]
 })
 export class AddComponent {
-  text1: string = 'Andrés Rechimon';
+  text1: string = 'Antes de escribir, presiona estos botones ↓';
   color : string = 'green';
 
   myForm: FormGroup = this.fb.group({
